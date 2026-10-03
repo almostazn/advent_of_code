@@ -18,9 +18,9 @@ if [ -f "$FILE" ]; then
 else
   echo "File '$FILE' template does not exists. Creating template file..."
   echo "def main():" >>  $FILE
-  echo "    with open('./inputs/$year/day$day.txt') as f:" >> $FILE
-  echo "        lines = [l.strip() for l in f.readlines()]" >> $FILE
-  echo "        print(lines)" >> $FILE
+  echo "    with open('../inputs/$year/day$day.txt') as f:" >> $FILE
+  echo "        for line in f.readlines():" >> $FILE
+  echo "            print(line.strip())" >> $FILE
   echo "" >> $FILE
   echo "if __name__ == '__main__':" >> $FILE
   echo "    main()" >> $FILE
